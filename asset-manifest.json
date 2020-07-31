@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/e-commerce-clothing/static/css/main.5a0ca9e4.chunk.css",
+    "main.js": "/e-commerce-clothing/static/js/main.2f4f767f.chunk.js",
+    "main.js.map": "/e-commerce-clothing/static/js/main.2f4f767f.chunk.js.map",
+    "runtime-main.js": "/e-commerce-clothing/static/js/runtime-main.80c37d9f.js",
+    "runtime-main.js.map": "/e-commerce-clothing/static/js/runtime-main.80c37d9f.js.map",
+    "static/js/2.83b2ffd9.chunk.js": "/e-commerce-clothing/static/js/2.83b2ffd9.chunk.js",
+    "static/js/2.83b2ffd9.chunk.js.map": "/e-commerce-clothing/static/js/2.83b2ffd9.chunk.js.map",
+    "index.html": "/e-commerce-clothing/index.html",
+    "precache-manifest.d660b059e8bec136e91c6c85a0c57253.js": "/e-commerce-clothing/precache-manifest.d660b059e8bec136e91c6c85a0c57253.js",
+    "service-worker.js": "/e-commerce-clothing/service-worker.js",
+    "static/css/main.5a0ca9e4.chunk.css.map": "/e-commerce-clothing/static/css/main.5a0ca9e4.chunk.css.map",
+    "static/js/2.83b2ffd9.chunk.js.LICENSE.txt": "/e-commerce-clothing/static/js/2.83b2ffd9.chunk.js.LICENSE.txt",
+    "static/media/crown.ed28accb.svg": "/e-commerce-clothing/static/media/crown.ed28accb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80c37d9f.js",
+    "static/js/2.83b2ffd9.chunk.js",
+    "static/css/main.5a0ca9e4.chunk.css",
+    "static/js/main.2f4f767f.chunk.js"
+  ]
+}
