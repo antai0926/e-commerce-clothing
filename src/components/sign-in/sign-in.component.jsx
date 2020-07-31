@@ -1,9 +1,8 @@
-//原生+解法
 import React, { useState } from 'react';
 
 import './sign-in.styles.scss';
 import FormInput from '../form-input/form-input.component';
-import CutomButton from '../custom-buttom/custom-button.component';
+import CutomButton from '../custom-button/custom-button.component';
 import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 const SignIn = () => {
@@ -16,9 +15,10 @@ const SignIn = () => {
 
   const handleChange = (event) => {
     const { value, name } = event.target;
-    let _state = Object.assign({}, state);
-    _state[name] = value;
-    setState(_state);
+    setState({
+      ...state,
+      [name]: value,
+    });
   };
 
   return (

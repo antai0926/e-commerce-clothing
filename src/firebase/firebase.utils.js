@@ -13,6 +13,35 @@ const config = {
   measurementId: 'G-ZP88KK2FYG',
 };
 
+/**if user not in firestore then create, data include displayName and email
+ * 描述
+ * @date 2020-07-31
+ * @param {any} userAuth
+ * @param {any} additionalData
+ * @returns {any} the user reference of firestore
+ */
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return;
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+  // console.log(snapShot);
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createAt = new Date();
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createAt,
+        ...additionalData,
+      });
+    } catch (error) {
+      console.log('error createing user', error.message);
+    }
+  }
+  return userRef;
+};
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
