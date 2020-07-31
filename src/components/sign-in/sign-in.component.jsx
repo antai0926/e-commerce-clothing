@@ -54,7 +54,7 @@ const SignIn = () => {
         />
         <div className="buttons">
           <CutomButton type="submit">Sign in</CutomButton>
-          <CutomButton onClick={signInWithGoogle} isGoogleSignIn>
+          <CutomButton type="button" onClick={signInWithGoogle} isGoogleSignIn>
             Sign in with Google
           </CutomButton>
         </div>

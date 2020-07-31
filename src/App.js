@@ -26,7 +26,7 @@ const App = () => {
           ...userData,
         });
         console.log('currentUser:', { id: snapShot.id, ...snapShot.data() });
-        alert(`${userData.displayName} Login Success!`);
+        alert(`${userData.displayName} is Logined!`);
       });
     });
     return () => {
