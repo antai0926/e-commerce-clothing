@@ -26,11 +26,12 @@ const SignUp = () => {
         email,
         password
       );
-      if(! user){
-        console.error('createUserWithEmailAndPassword return user null!')
+      if (!user) {
+        console.error('createUserWithEmailAndPassword return user null!');
         return;
       }
       await createUserProfileDocument(user, { displayName });
+      alert(`${user.email} signup success`);
       //clear
       setState({
         displayName: '',

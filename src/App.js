@@ -11,6 +11,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
   useEffect(() => {
+    //register to observ the changes of login state
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (!userAuth) {
         setCurrentUser(userAuth);
@@ -19,11 +20,13 @@ const App = () => {
       const userRef = await createUserProfileDocument(userAuth);
       //when the userRef data change invoke onSnapshot, then we get the new snapShot to setCurrentUser
       userRef.onSnapshot((snapShot) => {
+        const userData = snapShot.data();
         setCurrentUser({
           id: snapShot.id,
-          ...snapShot.data(),
+          ...userData,
         });
         console.log('currentUser:', { id: snapShot.id, ...snapShot.data() });
+        alert(`${userData.displayName} Login Success!`);
       });
     });
     return () => {
