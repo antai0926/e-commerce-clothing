@@ -8,9 +8,7 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 import './header.sytles.scss';
 
 const Header = () => {
-  const currentUser = useSelector((state) => {
-    return state.user.currentUser;
-  });
+  const currentUser = useSelector((state) => state.user.currentUser);
   return (
     <div className="header">
       <Link className="logo-container" to="/">
