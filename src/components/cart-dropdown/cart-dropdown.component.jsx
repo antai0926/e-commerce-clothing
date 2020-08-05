@@ -6,10 +6,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
 
 const CartDropdown = () => {
-  const state = useSelector((state) => state);
-  console.log('state', state);
   const cartItems = useSelector(({ cart: { cartItems } }) => cartItems);
-  console.log('cartItems', cartItems);
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
