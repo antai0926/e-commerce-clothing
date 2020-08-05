@@ -31,7 +31,6 @@ const SignUp = () => {
         return;
       }
       await createUserProfileDocument(user, { displayName });
-      alert(`${user.email} signup success`);
       //clear
       setState({
         displayName: '',

@@ -31,7 +31,6 @@ const useDetectLogin = () => {
           })
         );
         console.log('currentUser:', { id: snapShot.id, ...snapShot.data() });
-        alert(`${userData.displayName} is Logined!`);
       });
     });
     return () => {
