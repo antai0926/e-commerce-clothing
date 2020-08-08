@@ -47,9 +47,9 @@ const App = () => {
   useDetectLogin();
   return (
     <div>
-      <Helmet>
+      {/* <Helmet>
         <title>E-Commerce-Clothing</title>
-      </Helmet>
+      </Helmet> */}
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
