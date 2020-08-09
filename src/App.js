@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Helmet from 'react-helmet';
 import './App.css';
 
 import HomePage from './pages/homepage/homepage.component';
