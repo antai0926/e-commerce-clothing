@@ -1,8 +1,12 @@
 import React, { useMemo } from 'react';
-import './cart-icon.styles.scss';
-import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { useDispatch, useSelector } from 'react-redux';
+
+import {
+  CartIconContainer,
+  ShoppingIconContainer,
+  ItemCountContainer,
+} from './cart-icon.styles';
 
 const CartIcon = () => {
   const dispatch = useDispatch();
@@ -15,10 +19,10 @@ const CartIcon = () => {
   const itemCount = useMemo(() => calculateItemCount(cartItems), [cartItems]);
 
   return (
-    <div className="cart-icon" onClick={() => dispatch(toggleCartHidden())}>
-      <ShoppingIcon className="shopping-icon" />
-      <span className="item-count">{itemCount}</span>
-    </div>
+    <CartIconContainer onClick={() => dispatch(toggleCartHidden())}>
+      <ShoppingIconContainer />
+      <ItemCountContainer>{itemCount}</ItemCountContainer>
+    </CartIconContainer>
   );
 };
 
