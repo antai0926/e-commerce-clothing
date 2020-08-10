@@ -8,8 +8,13 @@ import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
+// import { selectCollectionsForPreview } from './redux/shop/shop.utils';
 
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import {
+  auth,
+  createUserProfileDocument,
+  // addCollectionAndDocuments,
+} from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 
 //To Practice Custom Hook
@@ -23,7 +28,7 @@ const useDetectLogin = () => {
         return;
       }
       const userRef = await createUserProfileDocument(userAuth);
-      //when the userRef data change invoke onSnapshot, then we get the new snapShot to setCurrentUser
+      //when the userRef data change(update,create,delete) invoke onSnapshot, then we get the new snapShot to setCurrentUser
       userRef.onSnapshot((snapShot) => {
         const userData = snapShot.data();
         dispatch(
@@ -41,9 +46,24 @@ const useDetectLogin = () => {
   }, [dispatch]);
 };
 
+// const useCreateShopItemsOnce = () => {
+//   const collections = useSelector((state) => state.shop.collections);
+//   const collectionsArr = selectCollectionsForPreview(collections);
+//   useEffect(() => {
+//     console.log('collectionsArr', collectionsArr);
+//     const newCollectionArr = collectionsArr.map(({ title, items }) => ({
+//       title,
+//       items,
+//     }));
+//     console.log('newCollectionArr', newCollectionArr);
+//     addCollectionAndDocuments('collections', newCollectionArr);
+//   }, []);
+// };
+
 const App = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   useDetectLogin();
+  // useCreateShopItemsOnce();
   return (
     <div>
       {/* <Helmet>
