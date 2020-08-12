@@ -30,5 +30,14 @@ export const fetchCollectionsStartAsync = () => {
         dispatch(fetchCollectionsSuccess(collectionsMap));
       })
       .catch((error) => dispatch(fetchCollectionsFailure(error.message)));
+
+    //use await and remember adding async to this return function
+    // try {
+    //   const snapshot = await collectionRef.get();
+    //   const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+    //   dispatch(fetchCollectionsSuccess(collectionsMap));
+    // } catch (error) {
+    //   dispatch(fetchCollectionsFailure(error.message));
+    // }
   };
 };
