@@ -2,11 +2,11 @@ import React from 'react';
 import './collection.styles.scss';
 import { useSelector } from 'react-redux';
 import CollectionItem from '../../components/collection-item/collection-item.component';
+import { selectCollection } from '../../redux/shop/shop.selectors.js';
 
 const CollectionPage = ({ match }) => {
   const collectionId = match.params.collectionId;
-  const collections = useSelector((state) => state.shop.collections);
-  const selectedCollections = collections[collectionId];
+  const selectedCollections = useSelector(selectCollection(collectionId));
   const { title, items } = selectedCollections;
 
   return (
