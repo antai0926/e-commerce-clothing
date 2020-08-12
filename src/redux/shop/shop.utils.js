@@ -1,3 +1,7 @@
 export const selectCollectionsForPreview = (collections) => {
-  return Object.values(collections);
-}
+  return collections ? Object.values(collections) : [];
+};
+
+export const selectIsCollectionsLoaded = (collections) => {
+  return !!collections;
+};
