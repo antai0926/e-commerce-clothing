@@ -10,19 +10,22 @@ import {
 import { useDispatch } from 'react-redux';
 
 const SignIn = () => {
-  const [state, setState] = useState({ email: '', password: '' });
+  const [userCredentials, setUserCredentials] = useState({
+    email: '',
+    password: '',
+  });
   const dispatch = useDispatch();
 
+  const { email, password } = userCredentials;
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { email, password } = state;
     dispatch(emailSignInStart({ email, password }));
   };
 
   const handleChange = (event) => {
     const { value, name } = event.target;
-    setState({
-      ...state,
+    setUserCredentials({
+      ...userCredentials,
       [name]: value,
     });
   };
@@ -35,7 +38,7 @@ const SignIn = () => {
         <FormInput
           name="email"
           type="email"
-          value={state.email}
+          value={email}
           handleChange={handleChange}
           label="email"
           required
@@ -43,7 +46,7 @@ const SignIn = () => {
         <FormInput
           name="password"
           type="password"
-          value={state.password}
+          value={password}
           handleChange={handleChange}
           label="password"
           required

@@ -7,13 +7,13 @@ import { signUpStart } from '../../redux/user/user.actions';
 import { useDispatch } from 'react-redux';
 
 const SignUp = () => {
-  const [state, setState] = useState({
+  const [userCredentials, setUserCredentials] = useState({
     displayName: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
-  const { displayName, email, password, confirmPassword } = state;
+  const { displayName, email, password, confirmPassword } = userCredentials;
   const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
@@ -28,8 +28,8 @@ const SignUp = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setState({
-      ...state,
+    setUserCredentials({
+      ...userCredentials,
       [name]: value,
     });
   };
@@ -42,7 +42,7 @@ const SignUp = () => {
         <FormInput
           type="text"
           name="displayName"
-          value={state.displayName}
+          value={displayName}
           handleChange={handleChange}
           label="Display Name"
           required
@@ -50,7 +50,7 @@ const SignUp = () => {
         <FormInput
           type="email"
           name="email"
-          value={state.email}
+          value={email}
           handleChange={handleChange}
           label="Email"
           required
@@ -58,7 +58,7 @@ const SignUp = () => {
         <FormInput
           type="password"
           name="password"
-          value={state.password}
+          value={password}
           handleChange={handleChange}
           label="Password"
           required
@@ -66,7 +66,7 @@ const SignUp = () => {
         <FormInput
           type="password"
           name="confirmPassword"
-          value={state.confirmPassword}
+          value={confirmPassword}
           handleChange={handleChange}
           label="Confirm Password"
           required
