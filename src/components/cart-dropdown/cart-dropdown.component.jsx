@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
 import CartItem from '../cart-item/cart-item.component';
@@ -13,9 +13,10 @@ import {
   CheckoutButtonContainer,
 } from './cart-dropdown.styles';
 
-const CartDropdown = ({ history }) => {
+const CartDropdown = () => {
   const cartItems = useSelector(({ cart: { cartItems } }) => cartItems);
   const dispatch = useDispatch();
+  const history = useHistory();
   return (
     <CartDropDwonContainer>
       <CartItemsContainer>
@@ -39,4 +40,4 @@ const CartDropdown = ({ history }) => {
   );
 };
 
-export default withRouter(CartDropdown);
+export default CartDropdown;
