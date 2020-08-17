@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const compression = required('compression');
+const compression = require('compression');
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
